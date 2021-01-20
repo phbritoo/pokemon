@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { history } from '../../../history'
-import { MDBContainer, MDBRow, MDBCol, MDBBox, MDBBtn, MDBIcon, MDBBtnGroup } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBBtnGroup } from "mdbreact";
 import './home.css'
 import FooterPage from '../../../components/footer/footer';
 
