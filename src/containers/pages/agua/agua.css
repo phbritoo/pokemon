@@ -1,0 +1,9 @@
+/* .bg{} */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+  width: 100%;
+  margin-top: 50px;
+}
