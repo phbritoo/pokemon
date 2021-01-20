@@ -20,7 +20,7 @@ class Menu extends Component {
         <MDBNavbar style={bgPink} dark expand="md" fixed="top">
           <MDBNavbarBrand>
             <MDBIcon icon="brain" className="m-3" />
-            <strong className="white-text h6">Desafio: Pokemon Store</strong>
+            <strong className="white-text h6">Desafio: Pokémon Store</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

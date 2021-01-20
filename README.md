@@ -1,6 +1,6 @@
-# Pokemon
+# Pokémon
 
-Projeto desenvolvido em **React JS**. Clique  **[aqui](https://desafio-dragon.netlify.app/)**  para ver a live **demo**.
+Projeto desenvolvido em **React JS**. Clique  **[aqui](https://desafio-pokemon.netlify.app/)**  para ver a live **demo**.
 
 
 ## Instalação local
@@ -15,9 +15,9 @@ $ npm start
 ## Funcionalidades
  
 
- - Escolha dos tipos de Pokemons
- - Listagem de Pokemons por tipos
- - Pesquisa de Pokemons
+ - Escolha dos tipos de Pokémon
+ - Listagem de Pokémon por tipos
+ - Pesquisa de Pokémon
  - Carrinho de Compras
 
 ## POKE API
