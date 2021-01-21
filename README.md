@@ -1,6 +1,6 @@
 # Pokémon
 
-Projeto desenvolvido em **React JS**. Clique  **[aqui](https://desafio-pokemon.netlify.app/)**  para ver a live **demo**.
+Projeto desenvolvido em **React JS**. Clique  **[aqui](https://desafio-pokemon-store.netlify.app/)**  para ver a live **demo**.
 
 
 ## Instalação local
@@ -15,10 +15,14 @@ $ npm start
 ## Funcionalidades
  
 
- - Escolha dos tipos de Pokémon
- - Listagem de Pokémon por tipos
- - Pesquisa de Pokémon
- - Carrinho de Compras
+- Escolha dos Tipos de Pokémon
+- Catálogo de Pokémon por tipo
+- Carrinho lateral
+- Resumo do carrinho
+- 6 lojas com estilos e tipos diferentes de Pokémon
+- Barra de busca para filtrar os Pokémon
+- Botão de finalizar compra, reiniciando o processo de compra
+- Modal de obrigado ao finalizar compra
 
 ## POKE API
  [https://pokeapi.co/api/v2/](https://pokeapi.co/api/v2/)
