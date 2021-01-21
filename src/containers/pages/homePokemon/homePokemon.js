@@ -4,10 +4,9 @@ import { useWindow } from '../../../hooks/window';
 import Menu from '../../../components/menu/menu';
 import PokemonCard from '../../../components/pokemonCard/pokemonCard';
 import styled from 'styled-components';
-import { MDBCol, MDBContainer, MDBIcon, MDBRow } from 'mdbreact';
+import { MDBCol, MDBRow } from 'mdbreact';
 import Carrinho from '../../../components/carrinho/carrinho'
-
-import './agua.css'
+import './homePokemon.css'
 
 export const Search = styled.input`
   border: 0;
@@ -17,18 +16,49 @@ export const Search = styled.input`
   height: 50px;
 `;
 
-export default function Agua() {
+export default function HomePokemon() {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonName, setPokemonName] = useState('');
-  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     async function getPokemon() {
-      const response = await axios.get("https://pokeapi.co/api/v2/type/11/");
-      setPokemon(response.data.pokemon);
+      switch (true) {
+        case window.location.pathname === '/agua': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/11/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        case window.location.pathname === '/fogo': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/10/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        case window.location.pathname === '/eletrico': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/13/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        case window.location.pathname === '/pedra': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/5/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        case window.location.pathname === '/planta': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/12/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        case window.location.pathname === '/lutador': {
+          const response = await axios.get("https://pokeapi.co/api/v2/type/2/");
+          setPokemon(response.data.pokemon);
+          return response
+        }
+        default: return;
+      }
     }
     getPokemon();
   }, [])
+
 
   const { windowDimensions } = useWindow();
 
@@ -47,6 +77,14 @@ export default function Agua() {
                 value={pokemonName}
                 onChange={(e) => setPokemonName(e.target.value)}
               />
+
+              {windowDimensions < 1000 ?
+                <>
+                  <span style={{ marginTop: "10px" }}>
+                    <Carrinho />
+                  </span>
+                </>
+                : null}
             </div>
           </MDBCol>
 
@@ -65,9 +103,13 @@ export default function Agua() {
             </div>
           </MDBRow>
         </MDBCol>
-        <MDBCol md="4" style={{ marginTop: "50px" }}>
-          <Carrinho minwidth="auto" />
-        </MDBCol>
+
+        {windowDimensions > 1000 ?
+          <MDBCol md="4" style={{ marginTop: "50px" }}>
+            <Carrinho minwidth="auto" />
+          </MDBCol>
+          : null}
+
       </MDBRow>
     </>
   );

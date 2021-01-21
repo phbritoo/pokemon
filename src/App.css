@@ -1,32 +1,14 @@
- /* .App {
-  background-color: #c96ce0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  font-family: 'Ubuntu', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  padding: 0;
-  box-sizing: border-box;
-  outline: 0;
-}  
- */
-
  .App {
    margin: 0 auto;
-   background-color: #5E478C;
  }
 
  .App-header {
-   background-color: #5E478C;
+   background-color: #f1f1f1cc;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    margin: 0 auto;
-   color: #E7DFDD;
    font-family: 'Ubuntu', sans-serif;
  }

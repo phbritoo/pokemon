@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { useCart } from '../../hooks/cart';
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdbreact';
 import styled from 'styled-components';
-
 
 export const ImageCardPokemon = styled.img`
   width: auto;
@@ -21,7 +20,6 @@ export default function PokemonCard({ name, price, imgUrl }) {
   function handleAddToCart(name, price) {
     const pokemon = { name, price }
     addToCart(pokemon);
-    // document.getElementById('btn').style.display = 'block';
   }
 
   useEffect(() => {
@@ -33,11 +31,11 @@ export default function PokemonCard({ name, price, imgUrl }) {
     getImg(imgUrl)
   }, [img, imgUrl])
 
-  return (  
+  return (
     <MDBRow >
       <MDBCol>
         <MDBCard wide className="card">
-        <ImageCardPokemon src={img}/>
+          <ImageCardPokemon src={img} />
           <MDBCardBody cascade className='text-center'>
             <MDBCardText style={{ color: "#83508B" }} >
               <strong className="h5">{name}</strong>
@@ -58,7 +56,6 @@ export default function PokemonCard({ name, price, imgUrl }) {
                   className='ml-2'
                   size='sm'
                 >
-
                 </MDBIcon>
               </h5>
             </a>

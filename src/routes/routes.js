@@ -6,21 +6,20 @@ import {
   Redirect
 } from "react-router-dom";
 import AppProvider from '../hooks/index';
-import Home from '../containers/pages/home/home';
-import Eletrico from '../containers/pages/eletrico/eletrico';
-import Agua from '../containers/pages/agua/agua';
-import Fogo from '../containers/pages/fogo/fogo';
-import Pedra from '../containers/pages/pedra/pedra';
+import Home from '../containers/pages/homeType/homeType';
+import HomePokemon from '../containers/pages/homePokemon/homePokemon';
 
 const Routes = () => (
   <AppProvider>
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/fogo" exact component={Fogo} />
-        <Route path="/pedra" exact component={Pedra} />
-        <Route path="/eletrico" exact component={Eletrico} />
-        <Route path="/agua" exact component={Agua} />
+        <Route path="/agua" exact component={HomePokemon} />
+        <Route path="/fogo" exact component={HomePokemon} />
+        <Route path="/pedra" exact component={HomePokemon} />
+        <Route path="/eletrico" exact component={HomePokemon} /> 
+        <Route path="/planta" exact component={HomePokemon} />
+        <Route path="/lutador" exact component={HomePokemon} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
