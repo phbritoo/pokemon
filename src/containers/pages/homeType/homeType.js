@@ -1,8 +1,15 @@
 import React from 'react'
 import { MDBRow, MDBCol, MDBBtn, MDBIcon, MDBBtnGroup } from "mdbreact";
 import FooterPage from '../../../components/footer/footer';
+import { history } from '../../../history'
 
 export default function HomeType() {
+  
+  const teste = () => {
+    history.push('/agua');
+    window.location.reload();
+  }
+  
   return (
     <>
       <img
@@ -19,7 +26,7 @@ export default function HomeType() {
       <MDBCol xl="6" md="12">
         <MDBRow center>
           <MDBBtnGroup>
-            <MDBBtn href="/fogo" flat className="deep-orange darken-2 mt-2">
+            <MDBBtn onClick={teste} flat className="deep-orange darken-2 mt-2">
               <MDBIcon icon="fire-alt" className="mr-2" />
                 Fogo
                </MDBBtn>
