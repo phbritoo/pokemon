@@ -120,7 +120,7 @@ export default function Carrinho({ minwidth }) {
       <MDBTable id="carrinho">
         <MDBTableHead>
           <tr>
-            <th className="text-center font-weight-bold">Pokemon</th>
+            <th className="text-center font-weight-bold">Pokémon</th>
             <th></th>
             <th className="text-center font-weight-bold" >Qtd</th>
             <th className="text-center font-weight-bold">Valor</th>
@@ -159,7 +159,7 @@ export default function Carrinho({ minwidth }) {
       </MDBTable>
       { cartTotal > 0
         ? <TotalCarrinho>
-          <MDBBtn id="btn" onClick={handleFinish} >
+          <MDBBtn id="btn" onClick={handleFinish}>
             Finalizar Compra
            </MDBBtn>
           <p className="text-center font-weight-bold m-4 text-lg-right">

@@ -39,7 +39,7 @@ export default function HomePokemon() {
           return response
         }
         case window.location.pathname === '/pedra': {
-          const response = await axios.get("https://pokeapi.co/api/v2/type/5/");
+          const response = await axios.get("https://pokeapi.co/api/v2/type/6/");
           setPokemon(response.data.pokemon);
           return response
         }

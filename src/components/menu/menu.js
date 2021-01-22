@@ -21,6 +21,11 @@ class Menu extends Component {
   }
 
   render() {
+
+    const goBack = () => {
+      window.location.href = '/';
+    }
+
     let bgPink;
     const changeColor = () => {
 
@@ -55,15 +60,22 @@ class Menu extends Component {
 
               <MDBNavbarNav right>
                 <MDBNavItem>
-                  <MDBNavLink to="#"><MDBIcon fab icon="github" /></MDBNavLink>
+                    <a href="https://github.com/phbritoo/pokemon" target="_blank" style={{textDecoration: "none", color:"white"}} rel="noopener noreferrer" alt="Git" >
+                      <MDBIcon fab icon="github"  size="2x" className="mr-3" />
+                    </a>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#"><MDBIcon fab icon="linkedin" /></MDBNavLink>
+                <a href="https://www.linkedin.com/in/phbritoo/" target="_blank" style={{textDecoration: "none", color:"white"}} rel="noopener noreferrer" alt="Git" >
+                      <MDBIcon fab icon="linkedin"  size="2x" className="mr-3" />
+                    </a>
                 </MDBNavItem>
               </MDBNavbarNav>
-              <MDBNavbarNav center>
-                <MDBNavItem>
-                  <MDBNavLink to="#"><MDBIcon fab icon="github" /></MDBNavLink>
+              <MDBNavbarNav right>
+                <MDBNavItem >
+                  <MDBNavLink to="/" onClick={goBack} className="white-text h6 text-center m-3">
+                    Voltar
+                   <MDBIcon far icon="arrow-alt-circle-right" className="mr-2" />
+                  </MDBNavLink>
                 </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>
