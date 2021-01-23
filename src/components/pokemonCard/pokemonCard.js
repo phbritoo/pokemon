@@ -31,16 +31,108 @@ export default function PokemonCard({ name, price, imgUrl }) {
     getImg(imgUrl)
   }, [img, imgUrl])
 
+  const pokemomAgua = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#3A99F8" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+      comprar
+      </h5>
+    )
+  }
+  const pokemomFogo = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#FE4B27" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+        comprar
+      </h5>
+    )
+  }
+  const pokemomPedra = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#B6AB67" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+      comprar
+      </h5>
+    )
+  }
+  const pokemomEltri = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#D3BF46" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+        comprar
+      </h5>
+    )
+  }
+  const pokemomPlanta = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#9FD97F" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+        comprar
+      </h5>
+    )
+  }
+  const pokemomLuta = () => {
+    return (
+      <h5 style={{ textDecoration: "none", color: "#BF6454" }}>
+        <MDBIcon
+          icon="shopping-basket"
+          className='mr-2'
+          size='sm'
+        />
+        comprar
+      </h5>
+    )
+  }
+  const changeColor = () => {
+    switch (true) {
+      case window.location.pathname === '/agua':
+        return pokemomAgua();
+      case window.location.pathname === '/fogo':
+        return pokemomFogo();
+      case window.location.pathname === '/pedra':
+        return pokemomPedra();
+      case window.location.pathname === '/eletrico':
+        return pokemomEltri();
+      case window.location.pathname === '/planta':
+        return pokemomPlanta();
+      case window.location.pathname === '/lutador':
+        return pokemomLuta()
+      default:
+        return;
+    }
+  };
+
+
   return (
     <MDBRow >
       <MDBCol>
         <MDBCard wide className="card">
           <ImageCardPokemon src={img} />
           <MDBCardBody cascade className='text-center'>
-            <MDBCardText style={{ color: "#83508B" }} >
+            <MDBCardText >
               <strong className="h5">{name}</strong>
             </MDBCardText>
-            <MDBCardText style={{ color: "#83508B" }} >
+            <MDBCardText >
               <strong className="h5">$ {price},00</strong>
             </MDBCardText>
 
@@ -49,15 +141,7 @@ export default function PokemonCard({ name, price, imgUrl }) {
               onClick={() => handleAddToCart(name, price)}
               className='mt-1 d-flex justify-content-end align-items-center'
             >
-              <h5>
-                Comprar{' '}
-                <MDBIcon
-                  icon='chevron-right'
-                  className='ml-2'
-                  size='sm'
-                >
-                </MDBIcon>
-              </h5>
+              {changeColor()}
             </a>
           </MDBCardBody>
         </MDBCard>

@@ -4,7 +4,7 @@ import { useWindow } from '../../../hooks/window';
 import Menu from '../../../components/menu/menu';
 import PokemonCard from '../../../components/pokemonCard/pokemonCard';
 import styled from 'styled-components';
-import { MDBCol, MDBRow } from 'mdbreact';
+import { MDBBtn, MDBCol, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBRow } from 'mdbreact';
 import Carrinho from '../../../components/carrinho/carrinho'
 import './homePokemon.css'
 
@@ -59,6 +59,17 @@ export default function HomePokemon() {
     getPokemon();
   }, [])
 
+  const [dropdown, setDropdown] = useState("");
+
+  const showDropdown = () => {
+   
+  }
+
+  const closeDropdown = event => {
+    console.log("hidden");
+    setDropdown("");
+    document.body.removeEventListener("click", closeDropdown);
+  };  
 
   const { windowDimensions } = useWindow();
 
@@ -69,14 +80,16 @@ export default function HomePokemon() {
           <Menu></Menu>
           <MDBCol>
             <div style={{ display: 'grid', justifyContent: 'center', marginTop: "50px" }}>
-              <input
-                className="form-control"
-                type="text"
-                aria-label="Search"
-                placeholder="Pesquisar Pokemon"
-                value={pokemonName}
-                onChange={(e) => setPokemonName(e.target.value)}
-              />
+              {pokemon ? (
+                <input
+                  className="form-control"
+                  type="text"
+                  aria-label="Search"
+                  placeholder="Pesquisar Pokemon"
+                  value={pokemonName}
+                  onChange={(e) => setPokemonName(e.target.value)}
+                />
+              ) : <h1> POKEMIN DDSDSS</h1>}
 
               {windowDimensions < 1000 ?
                 <>
@@ -111,6 +124,8 @@ export default function HomePokemon() {
           : null}
 
       </MDBRow>
+
+    
     </>
   );
 };

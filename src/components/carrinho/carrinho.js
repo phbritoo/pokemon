@@ -1,6 +1,7 @@
 import { MDBBtn, MDBIcon, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import React, { useCallback, useMemo } from 'react'
 import styled from 'styled-components';
+import Swal from 'sweetalert2'
 import { useCart } from '../../hooks/cart';
 
 export const CarrinhoHeader = styled.div`
@@ -40,9 +41,15 @@ export default function Carrinho({ minwidth }) {
     return 0;
   }, [filteredPokemon]);
 
-  const handleFinish = useCallback(() => {
+  const finalizarCompra = useCallback(() => {
+    Swal.fire({
+      title: 'Obrigado!!!',
+      text: `Você ganhou de volta: R$${Math.round(0.25 * cartTotal)},00 (25%)`,
+      icon: 'success',
+    })
     document.getElementById('btn').style.display = 'none';
     setEmpty();
+
 
   }, [cartTotal, setEmpty,])
 
@@ -50,48 +57,48 @@ export default function Carrinho({ minwidth }) {
   const pokemomAgua = () => {
     return (
       <CarrinhoHeader bgcolor="#3A99F8">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+        Cesta
       </CarrinhoHeader>
     )
   }
   const pokemomFogo = () => {
     return (
       <CarrinhoHeader bgcolor="#FE4B27">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+          Cesta
       </CarrinhoHeader>
     )
   }
   const pokemomPedra = () => {
     return (
       <CarrinhoHeader bgcolor="#B6AB67">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+        Cesta
       </CarrinhoHeader>
     )
   }
   const pokemomEltri = () => {
     return (
       <CarrinhoHeader bgcolor="#D3BF46">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+        Cesta
       </CarrinhoHeader>
     )
   }
   const pokemomPlanta = () => {
     return (
       <CarrinhoHeader bgcolor="#9FD97F">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+       Cesta
       </CarrinhoHeader>
     )
   }
   const pokemomLuta = () => {
     return (
       <CarrinhoHeader bgcolor="#BF6454">
-        Carrinho
-        <MDBIcon icon="shopping-cart" />
+        <MDBIcon icon="shopping-basket" className="mr-3" />
+        Cesta
       </CarrinhoHeader>
     )
   }
@@ -115,7 +122,7 @@ export default function Carrinho({ minwidth }) {
   };
 
   return (
-    <div style={{ backgroundColor: "#ebe8e8" }}>
+    <div style={{ backgroundColor: "white" }}>
       {changeColor()}
       <MDBTable id="carrinho">
         <MDBTableHead>
@@ -159,7 +166,8 @@ export default function Carrinho({ minwidth }) {
       </MDBTable>
       { cartTotal > 0
         ? <TotalCarrinho>
-          <MDBBtn id="btn" onClick={handleFinish}>
+          <MDBBtn id="btn" onClick={finalizarCompra} outline color="success" flat className="font-weight-bold">
+            <MDBIcon icon="shopping-basket" className="mr-2" />
             Finalizar Compra
            </MDBBtn>
           <p className="text-center font-weight-bold m-4 text-lg-right">
