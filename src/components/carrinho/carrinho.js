@@ -7,6 +7,7 @@ import { useCart } from '../../hooks/cart';
 export const CarrinhoHeader = styled.div`
     width: 100%;
     background-color: ${props => props.bgcolor};
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
